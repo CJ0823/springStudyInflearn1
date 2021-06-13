@@ -1,2 +1,8 @@
-package hello.core.creature;public interface CreatureService {
+package hello.core.creature;
+
+public interface CreatureService {
+
+  void register(Creature creature);
+
+  Creature findById(Long CreatureId);
 }
