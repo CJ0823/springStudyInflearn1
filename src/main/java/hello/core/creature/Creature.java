@@ -4,11 +4,13 @@ public class Creature {
 
   private Long id;
   private String name;
+  private int weight;
   private Grade grade;
 
-  public Creature(Long id, String name, Grade grade) {
+  public Creature(Long id, String name, int weight, Grade grade) {
     this.id = id;
     this.name = name;
+    this.weight = weight;
     this.grade = grade;
   }
 
@@ -26,6 +28,14 @@ public class Creature {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public int getWeight() {
+    return weight;
+  }
+
+  public void setWeight(int weight) {
+    this.weight = weight;
   }
 
   public Grade getGrade() {
