@@ -9,20 +9,24 @@ import hello.core.plan.PlanServiceImpl;
 
 public class AppConfig {
 
-  public PlanService planService() {
-    return new PlanServiceImpl(getCreatureRepository(), getCaringPolicy());
-  }
+    public PlanService planService() {
+        return new PlanServiceImpl(getCreatureRepository(), getCaringPolicy());
+    }
 
-  public CreatureService creatureService() {
-    return new CreatureServiceImpl(getCreatureRepository());
-  }
 
-  private RateCaringPolicy getCaringPolicy() {
-    return new RateCaringPolicy();
-  }
+    public CreatureService creatureService() {
 
-  private CreatureRepositoryAnimals getCreatureRepository() {
-    return new CreatureRepositoryAnimals();
-  }
+        return new CreatureServiceImpl(getCreatureRepository());
+    }
+
+    private CreatureRepositoryAnimals getCreatureRepository() {
+
+        return new CreatureRepositoryAnimals();
+    }
+
+
+    private RateCaringPolicy getCaringPolicy() {
+        return new RateCaringPolicy();
+    }
 
 }
