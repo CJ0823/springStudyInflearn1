@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 
-public class duplicated {
+public class Duplicated {
 
     AppConfig appConfig = new AppConfig();
 

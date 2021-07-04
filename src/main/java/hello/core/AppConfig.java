@@ -6,26 +6,32 @@ import hello.core.creature.CreatureService;
 import hello.core.creature.CreatureServiceImpl;
 import hello.core.plan.PlanService;
 import hello.core.plan.PlanServiceImpl;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
 public class AppConfig {
 
+    @Bean
     public PlanService planService() {
+        System.out.println("AppConfig.planService 호출");
         return new PlanServiceImpl(getCreatureRepository(), getCaringPolicy());
     }
 
-
+    @Bean
     public CreatureService creatureService() {
-
+        System.out.println("AppConfig.creatureService 호출");
         return new CreatureServiceImpl(getCreatureRepository());
     }
 
-    private CreatureRepositoryAnimals getCreatureRepository() {
-
+    @Bean
+    public CreatureRepositoryAnimals getCreatureRepository() {
+        System.out.println("AppConfig.getCreatureRepository 호출");
         return new CreatureRepositoryAnimals();
     }
 
-
-    private RateCaringPolicy getCaringPolicy() {
+    @Bean
+    public RateCaringPolicy getCaringPolicy() {
         return new RateCaringPolicy();
     }
 
