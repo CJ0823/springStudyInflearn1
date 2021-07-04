@@ -1,8 +1,11 @@
 package hello.core.creature;
 
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 public class CreatureRepositoryAnimals implements CreatureRepository{
 
   private static Map<Long, Creature> store = new HashMap<>();

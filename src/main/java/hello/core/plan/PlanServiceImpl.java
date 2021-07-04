@@ -6,12 +6,16 @@ import hello.core.caring.RateCaringPolicy;
 import hello.core.creature.Creature;
 import hello.core.creature.CreatureRepository;
 import hello.core.creature.CreatureRepositoryAnimals;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PlanServiceImpl implements PlanService {
 
   private final CreatureRepository creatureRepository;
   private final CaringPolicy caringPolicy;
 
+  @Autowired
   public PlanServiceImpl(CreatureRepository creatureRepository, CaringPolicy caringPolicy) {
     this.creatureRepository = creatureRepository;
     this.caringPolicy = caringPolicy;

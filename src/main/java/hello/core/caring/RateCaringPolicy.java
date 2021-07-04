@@ -2,7 +2,9 @@ package hello.core.caring;
 
 import hello.core.creature.Creature;
 import hello.core.creature.Grade;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RateCaringPolicy implements CaringPolicy {
 
   private int rate = 10;
