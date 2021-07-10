@@ -1,5 +1,6 @@
 package hello.core.plan;
 
+import hello.core.annotation.QulaifiedCaringPolicy;
 import hello.core.caring.CaringPolicy;
 import hello.core.caring.FixedCaringPolicy;
 import hello.core.caring.RateCaringPolicy;
@@ -17,7 +18,7 @@ public class PlanServiceImpl implements PlanService {
   private final CaringPolicy caringPolicy;
 
   @Autowired
-  public PlanServiceImpl(CreatureRepository creatureRepository, @Qualifier("qualifiedCaringPolicy") CaringPolicy caringPolicy) {
+  public PlanServiceImpl(CreatureRepository creatureRepository, @QulaifiedCaringPolicy CaringPolicy caringPolicy) {
     this.creatureRepository = creatureRepository;
     this.caringPolicy = caringPolicy;
   }

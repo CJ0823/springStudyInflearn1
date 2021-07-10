@@ -1,12 +1,13 @@
 package hello.core.caring;
 
+import hello.core.annotation.QulaifiedCaringPolicy;
 import hello.core.creature.Creature;
 import hello.core.creature.Grade;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@Qualifier("qualifiedCaringPolicy")
+@QulaifiedCaringPolicy
 public class FixedCaringPolicy implements CaringPolicy{
 
   private int additionalExpense = 10000; //추가 비용
