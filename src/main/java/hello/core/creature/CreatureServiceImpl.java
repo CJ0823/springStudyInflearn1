@@ -6,7 +6,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class CreatureServiceImpl implements CreatureService{
 
-  private final CreatureRepository creatureRepository;
+  private CreatureRepository creatureRepository;
+
+  @Autowired
+  public void init(CreatureRepository creatureRepository) {
+    this.creatureRepository = creatureRepository;
+  }
 
   @Autowired
   public CreatureServiceImpl(CreatureRepository creatureRepository) {

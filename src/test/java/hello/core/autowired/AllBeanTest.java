@@ -20,7 +20,7 @@ public class AllBeanTest {
 
     CaringService caringService = ac.getBean(CaringService.class);
     Creature elephant = new Creature(1L, "elephant", 1000, Grade.ENDANGERED);
-    int expense = caringService.expense(elephant, 10000, "fixedCaringPolicy");
+    int expense = caringService.expense(elephant, 10000, "rateCaringPolicy");
     System.out.println("expense = " + expense);
   }
 
