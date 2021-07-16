@@ -12,10 +12,10 @@ import javax.annotation.PreDestroy;
 public class SingletonTest {
   @Test
   void SingletonBeanFind() {
-    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(SingltonBean.class);
+    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(SingletonBean.class);
 
-    SingltonBean singletonBean1 = ac.getBean(SingltonBean.class);
-    SingltonBean singletonBean2 = ac.getBean(SingltonBean.class);
+    SingletonBean singletonBean1 = ac.getBean(SingletonBean.class);
+    SingletonBean singletonBean2 = ac.getBean(SingletonBean.class);
 
     Assertions.assertThat(singletonBean1).isSameAs(singletonBean2);
 
@@ -23,7 +23,7 @@ public class SingletonTest {
   }
 
   @Scope("singleton")
-  static class SingltonBean {
+  static class SingletonBean {
     @PostConstruct
     public void init() {
       System.out.println("SingletonBean.init");
